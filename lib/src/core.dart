@@ -294,6 +294,10 @@ class AudioSession {
     return true;
   }
 
+  Future<void> setAllowHapticsAndSystemSoundsDuringRecording(bool allow) async {
+    return await _avAudioSession!.setAllowHapticsAndSystemSoundsDuringRecording(allow);
+  }
+
   /// Completes with a list of available audio devices.
   Future<Set<AudioDevice>> getDevices(
       {bool includeInputs = true, bool includeOutputs = true}) async {
